@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "voxyserver",
+  "version": "${version}",
+  "name": "VoxyServer",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/voxyserver/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.dripps.voxyserver.client.VoxyserverDataGenerator"
+    ],
+    "client": [
+      "com.dripps.voxyserver.client.VoxyserverClient"
+    ],
+    "main": [
+      "com.dripps.voxyserver.Voxyserver"
+    ]
+  },
+  "mixins": [
+    "voxyserver.mixins.json",
+    {
+      "config": "voxyserver.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "suggests": {
+    "voxy": "*"
+  }
+}
