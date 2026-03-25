@@ -193,7 +193,7 @@ public class LodStreamingService {
                     }
                     server.execute(() -> {
                         ServerPlayer player = server.getPlayerList().getPlayer(playerId);
-                        if (player != null) {
+                        if (player != null && player.level() == level) {
                             ServerPlayNetworking.send(player, finalPayload);
                         }
                     });
@@ -275,6 +275,7 @@ public class LodStreamingService {
             server.execute(() -> {
                 ServerPlayer player = server.getPlayerList().getPlayer(playerId);
                 if (player == null) return;
+                if (!player.level().dimension().identifier().equals(dim)) return;
                 if (toSend.size() == 1) {
                     ServerPlayNetworking.send(player, toSend.getFirst());
                 } else {
