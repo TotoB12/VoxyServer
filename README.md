@@ -82,11 +82,11 @@ drop the voxyserver, voxy & sodium jar's into the server's `mods/` folder. no ot
 
 clients just need voxy installed as normal along with voxyserver.
 
-## arm64 ubuntu servers
+## ARM64 Ubuntu Servers
 
-yes, arm64 linux servers are realistically supportable. this project now includes the lwjgl linux arm64 native (`natives-linux-arm64`) so voxy's `MemoryUtil` usage can initialize on aarch64 dedicated servers.
+ARM64 Linux servers are now supported. this project includes the lwjgl linux arm64 native dependency (`natives-linux-arm64`) to enable voxy's `MemoryUtil` usage on aarch64 dedicated servers.
 
-important: you'll still need a voxy build that works on your target minecraft/fabric version and platform.
+**Important:** you'll still need a voxy build that works on your target minecraft/fabric version and platform.
 
 ## config
 
